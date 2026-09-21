@@ -8,7 +8,7 @@ export default function Navbar({ scrollToSection, activeSection, theme, onToggle
         {/* LOGO - LEFT */}
         <div className="navbar-logo" onClick={onToggleTheme}>
           <img 
-            src={theme === 'dark' ? '/logo-dark.jpg' : '/logo-light.png'}
+src={`${import.meta.env.BASE_URL}${theme === 'dark' ? 'logo-dark.jpg' : 'logo-light.png'}`}
             alt="Theme Toggle"
             className="logo-img"
           />
