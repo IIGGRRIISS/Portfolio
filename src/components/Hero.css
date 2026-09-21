@@ -1,0 +1,657 @@
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+
+  min-height: 90vh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 50%,
+      rgba(255, 42, 42, 0.07),
+      transparent 32%
+    ),
+    var(--color-black);
+
+  color: var(--color-white);
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 42, 42, 0.018) 50%,
+      transparent 100%
+    );
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.hero-container {
+  position: relative;
+
+  z-index: 1;
+
+  min-height: 90vh;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+
+  align-items: center;
+
+  gap: 3rem;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 620px;
+
+  padding: 5rem 0;
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.hero-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  margin: 0 0 1.4rem;
+
+  color: var(--color-red);
+
+  font-family: var(--font-secondary);
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+
+/* =========================
+   TITLE
+========================= */
+
+.hero-title {
+  display: flex;
+
+  flex-direction: column;
+
+  margin: 0;
+}
+
+
+/* Hello, I'm */
+
+.hero-greeting {
+  display: block;
+
+  color: var(--color-white);
+
+  font-family: var(--font-primary);
+
+  font-size: clamp(2.2rem, 4vw, 4rem);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.hero-name {
+  display: flex;
+
+  flex-direction: column;
+
+  margin-top: 0.35rem;
+
+  color: var(--color-white);
+
+  /*
+   * Deliberately use a normal font here instead
+   * of the highly stylized display font.
+   * This keeps the I in ALI clearly readable.
+   */
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(3rem, 5vw, 5.3rem);
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.065em;
+}
+
+.hero-name span {
+  display: block;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.hero-subtitle {
+  max-width: 590px;
+
+  margin: 1.8rem 0 0;
+
+  color: #aaaaaa;
+
+  font-family: var(--font-secondary);
+
+  font-size: 0.95rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================
+   CONTEXT
+========================= */
+
+.hero-context {
+  margin: 1.15rem 0 0;
+
+  color: var(--color-red);
+
+  font-family: var(--font-secondary);
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.hero-cta {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.8rem;
+
+  margin-top: 1.8rem;
+}
+
+.hero .btn {
+  min-width: 145px;
+
+  min-height: 46px;
+
+  padding: 0.75rem 1.15rem;
+
+  border-radius: 6px;
+
+  font-family: var(--font-secondary);
+
+  font-size: 0.82rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero .btn:not(.btn-outline) {
+  border: 1px solid var(--color-red);
+
+  background: var(--color-red);
+
+  color: var(--color-white);
+
+  box-shadow:
+    0 7px 22px rgba(255, 42, 42, 0.12);
+}
+
+.hero .btn:not(.btn-outline):hover {
+  transform: translateY(-2px);
+
+  background: transparent;
+
+  color: var(--color-red);
+
+  box-shadow:
+    0 9px 25px rgba(255, 42, 42, 0.17);
+}
+
+.hero .btn-outline {
+  border: 1px solid var(--color-light-gray);
+
+  background: transparent;
+
+  color: var(--color-white);
+}
+
+.hero .btn-outline:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-white);
+
+  background: var(--color-white);
+
+  color: var(--color-black);
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.hero-profile {
+  position: relative;
+
+  min-height: 600px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 3rem 0;
+}
+
+
+/* =========================
+   PROFILE GLOW
+========================= */
+
+.hero-profile-glow {
+  position: absolute;
+
+  width: 480px;
+
+  height: 480px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 42, 42, 0.09) 0%,
+      rgba(255, 42, 42, 0.025) 45%,
+      transparent 72%
+    );
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   PROFILE FRAME
+========================= */
+
+.hero-profile-frame {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(430px, 88%);
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: #111111;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 0 50px rgba(255, 42, 42, 0.06);
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.hero-profile-image {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.hero-profile-frame:hover .hero-profile-image {
+  transform: scale(1.02);
+}
+
+
+/* =========================
+   ACCENT FRAME
+========================= */
+
+.hero-profile-accent {
+  position: absolute;
+
+  z-index: 1;
+
+  width: min(430px, 88%);
+
+  aspect-ratio: 4 / 5;
+
+  border: 1px solid rgba(255, 42, 42, 0.25);
+
+  border-radius: 18px;
+
+  transform: translate(15px, 15px);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+html[data-theme="light"] .hero {
+  background:
+    radial-gradient(
+      circle at 78% 50%,
+      rgba(122, 62, 62, 0.06),
+      transparent 32%
+    ),
+    var(--bg-primary);
+
+  color: var(--text-primary);
+}
+
+html[data-theme="light"] .hero::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(122, 62, 62, 0.02) 50%,
+      transparent 100%
+    );
+}
+
+html[data-theme="light"] .hero-greeting {
+  color: var(--text-primary);
+}
+
+html[data-theme="light"] .hero-name {
+  color: var(--text-primary);
+}
+
+html[data-theme="light"] .hero-subtitle {
+  color: var(--text-muted);
+}
+
+html[data-theme="light"] .hero-context {
+  color: var(--accent-color);
+}
+
+html[data-theme="light"] .hero-profile-glow {
+  background:
+    radial-gradient(
+      circle,
+      rgba(122, 62, 62, 0.09) 0%,
+      rgba(122, 62, 62, 0.025) 45%,
+      transparent 72%
+    );
+}
+
+html[data-theme="light"] .hero-profile-frame {
+  border-color: var(--border-color);
+
+  background: var(--bg-secondary);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.1),
+    0 0 45px rgba(122, 62, 62, 0.05);
+}
+
+html[data-theme="light"] .hero-profile-accent {
+  border-color: rgba(122, 62, 62, 0.22);
+}
+
+html[data-theme="light"] .hero .btn:not(.btn-outline) {
+  background: var(--accent-color);
+
+  border-color: var(--accent-color);
+
+  color: var(--bg-secondary);
+}
+
+html[data-theme="light"] .hero .btn:not(.btn-outline):hover {
+  background: transparent;
+
+  color: var(--accent-color);
+
+  border-color: var(--accent-color);
+}
+
+html[data-theme="light"] .hero .btn-outline {
+  border-color: var(--border-color);
+
+  color: var(--text-primary);
+}
+
+html[data-theme="light"] .hero .btn-outline:hover {
+  background: var(--text-primary);
+
+  border-color: var(--text-primary);
+
+  color: var(--bg-secondary);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .hero-container {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+
+    gap: 2rem;
+  }
+
+  .hero-name {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+  }
+
+  .hero-profile-frame {
+    width: min(370px, 90%);
+  }
+
+  .hero-profile-accent {
+    width: min(370px, 90%);
+  }
+
+  .hero-profile {
+    min-height: 520px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-container {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+
+    gap: 0;
+  }
+
+  .hero-profile {
+    min-height: auto;
+
+    padding-top: 7rem;
+
+    padding-bottom: 1rem;
+  }
+
+  .hero-profile-frame {
+    width: min(310px, 80vw);
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+  }
+
+  .hero-profile-accent {
+    width: min(310px, 80vw);
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    transform: translate(12px, 12px);
+  }
+
+  .hero-profile-glow {
+    width: 330px;
+
+    height: 330px;
+  }
+
+  .hero-content {
+    padding: 2rem 0 5rem;
+
+    max-width: none;
+  }
+
+  .hero-greeting {
+    font-size: clamp(2.2rem, 9vw, 3.3rem);
+  }
+
+  .hero-name {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+
+    line-height: 0.96;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-cta {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .hero .btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .hero-profile {
+    padding-top: 6rem;
+  }
+
+  .hero-profile-frame {
+    width: 260px;
+  }
+
+  .hero-profile-accent {
+    width: 260px;
+  }
+
+  .hero-profile-glow {
+    width: 280px;
+
+    height: 280px;
+  }
+}

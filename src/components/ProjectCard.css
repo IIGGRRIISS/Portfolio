@@ -1,0 +1,433 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-dark-gray);
+  border: 1px solid var(--color-light-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
+}
+
+.project-card:hover {
+  border-color: var(--color-red);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 42, 42, 0.2);
+}
+
+.project-card.hovered {
+  border-color: var(--color-red);
+}
+
+/* =========================
+   IMAGE SECTION
+========================= */
+
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: var(--color-gray);
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    var(--color-gray) 0%,
+    var(--color-light-gray) 100%
+  );
+
+  color: var(--color-white);
+
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(8, 8, 8, 0.5) 100%
+  );
+
+  opacity: 0;
+
+  transition: opacity var(--transition-base);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* =========================
+   CONTENT SECTION
+========================= */
+
+.project-content {
+  padding: var(--spacing-lg);
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--spacing-sm);
+}
+
+.project-title {
+  font-family: var(--font-primary);
+
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  color: var(--color-white);
+
+  margin: 0;
+}
+
+.project-tagline {
+  font-family: var(--font-secondary);
+
+  font-size: 0.9rem;
+
+  color: var(--color-red);
+
+  margin: 0;
+
+  font-weight: 600;
+}
+
+.project-description {
+  font-size: 0.95rem;
+
+  color: #aaa;
+
+  margin: 0;
+
+  line-height: 1.6;
+
+  flex: 1;
+}
+
+/* =========================
+   TECH TAGS
+========================= */
+
+.project-tech {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: var(--spacing-xs);
+
+  margin: var(--spacing-md) 0;
+}
+
+.tech-tag {
+  display: inline-block;
+
+  padding: 0.35rem 0.75rem;
+
+  background-color: var(--color-light-gray);
+
+  color: var(--color-white);
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  border-radius: 4px;
+
+  font-family: var(--font-secondary);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  border: 1px solid var(--color-gray);
+
+  transition: all var(--transition-fast);
+}
+
+.project-card:hover .tech-tag {
+  background-color: var(--color-red);
+
+  color: var(--color-white);
+
+  border-color: var(--color-red);
+}
+
+/* =========================
+   PROJECT LINKS
+========================= */
+
+.project-links {
+  display: flex;
+
+  gap: var(--spacing-md);
+
+  margin-bottom: var(--spacing-md);
+}
+
+.project-link {
+  flex: 1;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0.75rem 1rem;
+
+  text-align: center;
+
+  border-radius: 4px;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  font-family: var(--font-secondary);
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+
+  border: 1px solid var(--color-light-gray);
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+/* =========================
+   GITHUB BUTTON — DARK
+========================= */
+
+.project-link.github {
+  background-color: transparent;
+
+  color: var(--color-white);
+
+  border-color: var(--color-light-gray);
+}
+
+.project-link.github:hover {
+  background-color: var(--color-white);
+
+  color: var(--color-black);
+
+  border-color: var(--color-white);
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   CASE STUDY BUTTON — DARK
+========================= */
+
+.project-link.demo {
+  background-color: var(--color-red);
+
+  color: var(--color-white);
+
+  border-color: var(--color-red);
+
+  box-shadow: 0 4px 12px rgba(255, 42, 42, 0.12);
+}
+
+.project-link.demo:hover {
+  background-color: transparent;
+
+  color: var(--color-red);
+
+  border-color: var(--color-red);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(255, 42, 42, 0.22);
+}
+
+/* =========================
+   CASE STUDY ARROW
+========================= */
+
+.project-link.demo::after {
+  content: "→";
+
+  margin-left: 0.45rem;
+
+  transition: transform var(--transition-fast);
+}
+
+.project-link.demo:hover::after {
+  transform: translateX(4px);
+}
+
+/* =========================
+   ACCENT BORDER
+========================= */
+
+.project-accent {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  border-top: 4px solid var(--color-red);
+
+  opacity: 0;
+
+  transition: opacity var(--transition-base);
+}
+
+.project-card:hover .project-accent {
+  opacity: 1;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+html[data-theme="light"] .project-card {
+  background-color: var(--bg-secondary);
+
+  border-color: var(--border-color);
+}
+
+html[data-theme="light"] .project-card:hover {
+  border-color: var(--accent-color);
+
+  box-shadow: 0 20px 40px rgba(122, 62, 62, 0.15);
+}
+
+html[data-theme="light"] .project-title {
+  color: var(--text-primary);
+}
+
+html[data-theme="light"] .project-tagline {
+  color: var(--accent-color);
+}
+
+html[data-theme="light"] .project-description {
+  color: var(--text-muted);
+}
+
+html[data-theme="light"] .tech-tag {
+  background-color: var(--bg-primary);
+
+  color: var(--accent-color);
+
+  border-color: var(--border-color);
+}
+
+html[data-theme="light"] .project-card:hover .tech-tag {
+  background-color: var(--accent-color);
+
+  color: var(--bg-secondary);
+
+  border-color: var(--accent-color);
+}
+
+/* =========================
+   LIGHT MODE — PROJECT LINKS
+========================= */
+
+html[data-theme="light"] .project-link {
+  color: var(--text-primary);
+
+  border-color: var(--border-color);
+}
+
+/* GitHub */
+
+html[data-theme="light"] .project-link.github {
+  background-color: transparent;
+
+  color: var(--text-primary);
+
+  border-color: var(--border-color);
+}
+
+html[data-theme="light"] .project-link.github:hover {
+  background-color: var(--text-primary);
+
+  color: var(--bg-secondary);
+
+  border-color: var(--text-primary);
+
+  transform: translateY(-2px);
+}
+
+/* Case Study */
+
+html[data-theme="light"] .project-link.demo {
+  background-color: var(--accent-color);
+
+  border-color: var(--accent-color);
+
+  color: var(--bg-secondary);
+
+  box-shadow: 0 4px 12px rgba(122, 62, 62, 0.1);
+}
+
+html[data-theme="light"] .project-link.demo:hover {
+  background-color: transparent;
+
+  color: var(--accent-color);
+
+  border-color: var(--accent-color);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(122, 62, 62, 0.18);
+}
+
+/* =========================
+   LIGHT MODE — CASE STUDY ARROW
+========================= */
+
+html[data-theme="light"] .project-link.demo::after {
+  color: inherit;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .project-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-link {
+    width: 100%;
+  }
+}

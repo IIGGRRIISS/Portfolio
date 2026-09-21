@@ -1,0 +1,1397 @@
+/* =========================================================
+   SIGNIFY — CASE STUDY
+   Dark: Purple + Gold
+   Light: Purple + White
+========================================================= */
+
+.signify-page {
+  --signify-purple: #8b5cf6;
+  --signify-purple-bright: #a78bfa;
+  --signify-purple-deep: #6d3ee8;
+  --signify-purple-soft: rgba(139, 92, 246, 0.1);
+  --signify-purple-border: rgba(139, 92, 246, 0.32);
+
+  --signify-gold: #d4af37;
+  --signify-gold-bright: #f0d264;
+  --signify-gold-soft: rgba(212, 175, 55, 0.09);
+  --signify-gold-border: rgba(212, 175, 55, 0.28);
+
+  --signify-page-bg: #08060d;
+  --signify-section-bg: #0b0811;
+  --signify-section-alt: #100b17;
+
+  --signify-panel: rgba(255, 255, 255, 0.025);
+
+  --signify-heading: #d4af37;
+  --signify-text: #d8c98d;
+  --signify-muted: #aa9d6d;
+  --signify-dim: #766d4c;
+
+  --signify-border: rgba(212, 175, 55, 0.13);
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 5%,
+      rgba(139, 92, 246, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 35%,
+      rgba(212, 175, 55, 0.08),
+      transparent 25%
+    ),
+    var(--signify-page-bg);
+
+  color: var(--signify-text);
+
+  font-family: inherit;
+}
+
+/* =========================================================
+   LIGHT MODE
+   Purple + White
+========================================================= */
+
+html[data-theme="light"] .signify-page {
+  --signify-page-bg: #ffffff;
+  --signify-section-bg: #ffffff;
+  --signify-section-alt: #faf9ff;
+
+  --signify-panel: rgba(124, 58, 237, 0.035);
+
+  --signify-heading: #6d3ee8;
+  --signify-text: #403650;
+  --signify-muted: #706685;
+  --signify-dim: #938aa5;
+
+  --signify-border: rgba(109, 62, 232, 0.12);
+
+  --signify-purple: #7c3aed;
+  --signify-purple-bright: #8b5cf6;
+  --signify-purple-deep: #6d28d9;
+  --signify-purple-soft: rgba(124, 58, 237, 0.07);
+  --signify-purple-border: rgba(124, 58, 237, 0.24);
+
+  --signify-gold: #b58b16;
+  --signify-gold-bright: #c99f28;
+  --signify-gold-soft: rgba(181, 139, 22, 0.05);
+  --signify-gold-border: rgba(181, 139, 22, 0.18);
+
+  background:
+    radial-gradient(
+      circle at 80% 5%,
+      rgba(124, 58, 237, 0.07),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 35%,
+      rgba(181, 139, 22, 0.04),
+      transparent 25%
+    ),
+    #ffffff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.signify-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.signify-hero {
+  position: relative;
+
+  min-height: 88vh;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid var(--signify-border);
+
+  background:
+    radial-gradient(
+      circle at 75% 40%,
+      rgba(139, 92, 246, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 75%,
+      rgba(212, 175, 55, 0.07),
+      transparent 25%
+    ),
+    var(--signify-page-bg);
+}
+
+.signify-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(139, 92, 246, 0.025) 50%,
+      transparent 100%
+    );
+}
+
+.signify-hero::after {
+  content: "";
+
+  position: absolute;
+
+  right: -10%;
+  bottom: -30%;
+
+  width: 60%;
+  height: 65%;
+
+  background: var(--signify-purple);
+
+  opacity: 0.055;
+
+  filter: blur(110px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.signify-back {
+  position: absolute;
+
+  top: 2rem;
+  left: 0;
+
+  z-index: 10;
+
+  padding: 0.7rem 1rem;
+
+  border: 1px solid var(--signify-purple-border);
+
+  border-radius: 999px;
+
+  background: var(--signify-purple-soft);
+
+  color: var(--signify-purple);
+
+  font: inherit;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.signify-back:hover {
+  color: var(--signify-gold-bright);
+
+  border-color: var(--signify-gold-border);
+
+  background: var(--signify-gold-soft);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.signify-hero-content {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 950px;
+
+  padding: 8rem 0 6rem;
+}
+
+.signify-eyebrow {
+  margin: 0 0 1.5rem;
+
+  color: var(--signify-gold);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.signify-eyebrow span {
+  margin: 0 0.45rem;
+
+  color: var(--signify-dim);
+}
+
+.signify-hero h1 {
+  margin: 0;
+
+  color: var(--signify-heading);
+
+  font-size: clamp(4.8rem, 13vw, 10rem);
+
+  line-height: 0.82;
+
+  letter-spacing: -0.08em;
+
+  font-weight: 900;
+}
+
+.signify-hero h1 span {
+  color: var(--signify-purple);
+}
+
+.signify-hero-title {
+  max-width: 850px;
+
+  margin: 2rem 0 0;
+
+  color: var(--signify-heading);
+
+  font-size: clamp(1.3rem, 2.5vw, 2.1rem);
+
+  line-height: 1.2;
+
+  letter-spacing: -0.03em;
+}
+
+.signify-hero-description {
+  max-width: 720px;
+
+  margin: 1.5rem 0 0;
+
+  color: var(--signify-muted);
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+.signify-hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 1.2rem;
+
+  margin-top: 2.5rem;
+}
+
+.signify-primary-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 0.8rem 1.25rem;
+
+  border: 1px solid var(--signify-purple);
+
+  border-radius: 999px;
+
+  background: var(--signify-purple);
+
+  color: #ffffff;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 0 30px rgba(139, 92, 246, 0.16);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.signify-primary-btn:hover {
+  transform: translateY(-2px);
+
+  background: var(--signify-purple-bright);
+
+  box-shadow:
+    0 0 45px rgba(139, 92, 246, 0.28);
+}
+
+.signify-project-type {
+  color: var(--signify-dim);
+
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   SHARED SECTION
+========================================================= */
+
+.signify-section {
+  padding: 8rem 0;
+
+  border-bottom: 1px solid var(--signify-border);
+
+  background: var(--signify-section-bg);
+}
+
+.signify-section-header {
+  display: grid;
+
+  grid-template-columns: 70px 1fr;
+
+  gap: 1rem;
+
+  margin-bottom: 4rem;
+}
+
+.signify-section-header > span {
+  padding-top: 0.35rem;
+
+  color: var(--signify-purple);
+
+  font-family: monospace;
+
+  font-size: 0.85rem;
+}
+
+.signify-section-header p {
+  margin: 0 0 0.7rem;
+
+  color: var(--signify-gold);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.signify-section-header h2 {
+  max-width: 900px;
+
+  margin: 0;
+
+  color: var(--signify-heading);
+
+  font-size: clamp(2rem, 4vw, 3.8rem);
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.signify-intro {
+  background: var(--signify-section-bg);
+}
+
+.signify-intro-grid {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 6rem;
+
+  align-items: center;
+}
+
+.signify-intro-copy {
+  max-width: 700px;
+}
+
+.signify-intro-copy p:not(.signify-large-text) {
+  color: var(--signify-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.85;
+}
+
+.signify-large-text {
+  margin: 0 0 2rem;
+
+  color: var(--signify-heading);
+
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+
+  line-height: 1.25;
+
+  letter-spacing: -0.04em;
+}
+
+.signify-direction-card {
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 2rem;
+
+  border: 1px solid var(--signify-purple-border);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--signify-purple-soft),
+      var(--signify-gold-soft)
+    );
+}
+
+.signify-direction {
+  text-align: center;
+}
+
+.signify-direction span {
+  display: block;
+
+  margin-bottom: 0.75rem;
+
+  color: var(--signify-gold);
+
+  font-size: 0.6rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.signify-direction strong {
+  display: block;
+
+  color: var(--signify-purple);
+
+  font-size: 2rem;
+
+  letter-spacing: -0.04em;
+}
+
+.signify-direction small {
+  display: block;
+
+  margin-top: 0.4rem;
+
+  color: var(--signify-muted);
+
+  font-size: 0.65rem;
+}
+
+.signify-direction-arrow {
+  color: var(--signify-gold);
+
+  font-size: 2rem;
+}
+
+/* =========================================================
+   MOTIVATION
+========================================================= */
+
+.signify-motivation {
+  background: var(--signify-section-alt);
+}
+
+.signify-principles {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid var(--signify-border);
+
+  border-left: 1px solid var(--signify-border);
+}
+
+.signify-principle {
+  min-height: 300px;
+
+  padding: 2rem;
+
+  border-right: 1px solid var(--signify-border);
+
+  border-bottom: 1px solid var(--signify-border);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.signify-principle:hover {
+  background: var(--signify-purple-soft);
+
+  border-color: var(--signify-purple-border);
+}
+
+.signify-principle > span {
+  color: var(--signify-purple);
+
+  font-family: monospace;
+
+  font-size: 0.75rem;
+}
+
+.signify-principle h3 {
+  margin: 3rem 0 1rem;
+
+  color: var(--signify-heading);
+
+  font-size: 1.35rem;
+}
+
+.signify-principle p {
+  margin: 0;
+
+  color: var(--signify-muted);
+
+  font-size: 0.85rem;
+
+  line-height: 1.75;
+}
+
+/* =========================================================
+   SIGN → TEXT / SPEECH
+========================================================= */
+
+.signify-system-layout {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 6rem;
+
+  align-items: center;
+}
+
+.signify-system-copy p {
+  color: var(--signify-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.85;
+}
+
+.signify-system-copy p + p {
+  margin-top: 1.5rem;
+}
+
+.signify-pipeline {
+  padding: 2rem;
+
+  border: 1px solid var(--signify-purple-border);
+
+  background: var(--signify-panel);
+}
+
+.signify-pipeline-step {
+  display: grid;
+
+  grid-template-columns: 42px 1fr;
+
+  column-gap: 1rem;
+
+  align-items: center;
+}
+
+.signify-pipeline-step span {
+  grid-row: span 2;
+
+  color: var(--signify-purple);
+
+  font-family: monospace;
+
+  font-size: 0.7rem;
+}
+
+.signify-pipeline-step strong {
+  color: var(--signify-heading);
+
+  font-size: 1rem;
+}
+
+.signify-pipeline-step small {
+  margin-top: 0.25rem;
+
+  color: var(--signify-muted);
+
+  font-size: 0.7rem;
+}
+
+.signify-pipeline-line {
+  width: 1px;
+
+  height: 35px;
+
+  margin: 0.4rem 0 0.4rem 20px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--signify-purple),
+      var(--signify-gold)
+    );
+
+  opacity: 0.65;
+}
+
+/* =========================================================
+   TEXT / SPEECH → SIGN
+========================================================= */
+
+.signify-text-to-sign {
+  background: var(--signify-section-alt);
+}
+
+.signify-reverse-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 5rem;
+
+  align-items: center;
+}
+
+.signify-reverse-visual {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.5rem;
+
+  min-height: 300px;
+
+  padding: 2rem;
+
+  border: 1px solid var(--signify-purple-border);
+
+  background:
+    radial-gradient(
+      circle,
+      var(--signify-purple-soft),
+      transparent 65%
+    );
+}
+
+.signify-letter {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 110px;
+  height: 110px;
+
+  border: 1px solid var(--signify-gold-border);
+
+  background: var(--signify-gold-soft);
+
+  color: var(--signify-gold);
+
+  font-size: 4rem;
+
+  font-weight: 800;
+}
+
+.signify-arrow {
+  color: var(--signify-purple);
+
+  font-size: 2rem;
+}
+
+.signify-sign-box {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 130px;
+  height: 130px;
+
+  border: 1px solid var(--signify-purple-border);
+
+  background: var(--signify-purple-soft);
+}
+
+.signify-sign-box span {
+  color: var(--signify-gold);
+
+  font-size: 0.6rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.signify-sign-box strong {
+  margin-top: 0.5rem;
+
+  color: var(--signify-purple);
+
+  font-size: 1.4rem;
+}
+
+.signify-reverse-copy p {
+  color: var(--signify-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.85;
+}
+
+.signify-tech-pills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+
+  margin-top: 2rem;
+}
+
+.signify-tech-pills span {
+  padding: 0.55rem 0.7rem;
+
+  border: 1px solid var(--signify-purple-border);
+
+  color: var(--signify-purple);
+
+  background: var(--signify-purple-soft);
+
+  font-size: 0.65rem;
+}
+
+/* =========================================================
+   PROJECT PHASES
+========================================================= */
+
+.signify-phases {
+  background: var(--signify-section-bg);
+}
+
+.signify-phase-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1rem;
+}
+
+.signify-phase {
+  padding: 2.5rem;
+
+  border: 1px solid var(--signify-border);
+
+  background: var(--signify-panel);
+}
+
+.signify-phase-featured {
+  border-color: var(--signify-purple-border);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--signify-purple-soft),
+      transparent 65%
+    );
+}
+
+.signify-phase-number {
+  color: var(--signify-purple);
+
+  font-family: monospace;
+
+  font-size: 0.8rem;
+}
+
+.signify-phase-label {
+  margin: 2.5rem 0 0.8rem;
+
+  color: var(--signify-gold);
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.signify-phase h3 {
+  margin: 0;
+
+  color: var(--signify-heading);
+
+  font-size: 1.8rem;
+
+  letter-spacing: -0.035em;
+}
+
+.signify-phase > p:not(.signify-phase-label) {
+  color: var(--signify-muted);
+
+  font-size: 0.85rem;
+
+  line-height: 1.8;
+}
+
+.signify-phase ul {
+  display: grid;
+
+  gap: 0.7rem;
+
+  margin: 2rem 0 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.signify-phase li {
+  color: var(--signify-muted);
+
+  font-size: 0.75rem;
+}
+
+.signify-phase li::before {
+  content: "—";
+
+  margin-right: 0.6rem;
+
+  color: var(--signify-purple);
+}
+
+/* =========================================================
+   GAME EXPERIENCE
+========================================================= */
+
+.signify-game {
+  background: var(--signify-section-alt);
+}
+
+.signify-game-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid var(--signify-border);
+
+  border-left: 1px solid var(--signify-border);
+}
+
+.signify-game-grid article {
+  min-height: 260px;
+
+  padding: 2rem;
+
+  border-right: 1px solid var(--signify-border);
+
+  border-bottom: 1px solid var(--signify-border);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.signify-game-grid article:hover {
+  background: var(--signify-purple-soft);
+
+  border-color: var(--signify-purple-border);
+}
+
+.signify-game-grid article > span {
+  color: var(--signify-purple);
+
+  font-family: monospace;
+
+  font-size: 0.7rem;
+}
+
+.signify-game-grid h3 {
+  margin: 3rem 0 1rem;
+
+  color: var(--signify-heading);
+
+  font-size: 1.25rem;
+}
+
+.signify-game-grid p {
+  margin: 0;
+
+  color: var(--signify-muted);
+
+  font-size: 0.8rem;
+
+  line-height: 1.75;
+}
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+.signify-research {
+  background: var(--signify-section-bg);
+}
+
+.signify-research-box {
+  display: grid;
+
+  grid-template-columns: 80px 1fr;
+
+  gap: 2rem;
+
+  padding: 3rem;
+
+  border: 1px solid var(--signify-gold-border);
+
+  background:
+    linear-gradient(
+      120deg,
+      var(--signify-gold-soft),
+      var(--signify-purple-soft)
+    );
+}
+
+.signify-research-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+
+  border: 1px solid var(--signify-gold-border);
+
+  color: var(--signify-gold);
+
+  font-size: 1.4rem;
+
+  font-weight: 800;
+}
+
+.signify-research-label {
+  margin: 0 0 0.8rem;
+
+  color: var(--signify-gold);
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.signify-research-box h2 {
+  margin: 0;
+
+  color: var(--signify-heading);
+
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+
+  letter-spacing: -0.04em;
+}
+
+.signify-research-box > div:last-child > p:last-child {
+  max-width: 700px;
+
+  margin: 1.2rem 0 0;
+
+  color: var(--signify-muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   TEAM
+========================================================= */
+
+.signify-team {
+  background: var(--signify-section-alt);
+}
+
+.signify-team-list {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid var(--signify-border);
+
+  border-left: 1px solid var(--signify-border);
+}
+
+.signify-team-member {
+  display: grid;
+
+  grid-template-columns: 45px 1fr;
+
+  gap: 1rem;
+
+  align-items: center;
+
+  min-height: 150px;
+
+  padding: 1.5rem;
+
+  border-right: 1px solid var(--signify-border);
+
+  border-bottom: 1px solid var(--signify-border);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.signify-team-member:hover {
+  background: var(--signify-purple-soft);
+
+  border-color: var(--signify-purple-border);
+}
+
+.signify-team-member > span {
+  color: var(--signify-purple);
+
+  font-family: monospace;
+
+  font-size: 0.7rem;
+}
+
+.signify-team-member strong {
+  display: block;
+
+  color: var(--signify-heading);
+
+  font-size: 0.9rem;
+}
+
+.signify-team-member small {
+  display: block;
+
+  margin-top: 0.35rem;
+
+  color: var(--signify-gold);
+
+  font-size: 0.65rem;
+}
+
+/* =========================================================
+   TECHNOLOGY
+========================================================= */
+
+.signify-technology {
+  background: var(--signify-section-bg);
+}
+
+.signify-tech-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.65rem;
+}
+
+.signify-tech-list span {
+  padding: 0.7rem 0.9rem;
+
+  border: 1px solid var(--signify-purple-border);
+
+  background: var(--signify-purple-soft);
+
+  color: var(--signify-purple);
+
+  font-size: 0.75rem;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.signify-tech-list span:hover {
+  border-color: var(--signify-gold-border);
+
+  background: var(--signify-gold-soft);
+
+  color: var(--signify-gold);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.signify-footer {
+  padding: 8rem 0;
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(139, 92, 246, 0.13),
+      transparent 35%
+    ),
+    var(--signify-page-bg);
+}
+
+.signify-footer-content {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 3rem;
+}
+
+.signify-footer-content p {
+  margin: 0 0 1rem;
+
+  color: var(--signify-gold);
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.signify-footer-content h2 {
+  margin: 0;
+
+  color: var(--signify-heading);
+
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.065em;
+}
+
+.signify-secondary-btn {
+  min-height: 48px;
+
+  padding: 0.8rem 1.25rem;
+
+  border: 1px solid var(--signify-purple-border);
+
+  border-radius: 999px;
+
+  background: var(--signify-purple-soft);
+
+  color: var(--signify-purple);
+
+  font: inherit;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.signify-secondary-btn:hover {
+  border-color: var(--signify-gold-border);
+
+  background: var(--signify-gold-soft);
+
+  color: var(--signify-gold);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+  .signify-section {
+    padding: 6rem 0;
+  }
+
+  .signify-intro-grid {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  .signify-system-layout {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  .signify-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .signify-game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .signify-team-list {
+    grid-template-columns: 1fr;
+  }
+
+  .signify-footer-content {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .signify-container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .signify-hero {
+    min-height: 760px;
+  }
+
+  .signify-hero-content {
+    padding-top: 9rem;
+  }
+
+  .signify-hero h1 {
+    font-size: clamp(4.5rem, 23vw, 7rem);
+  }
+
+  .signify-section-header {
+    grid-template-columns: 45px 1fr;
+
+    gap: 0.5rem;
+  }
+
+  .signify-section {
+    padding: 5rem 0;
+  }
+
+  .signify-reverse-grid {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+  .signify-phase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .signify-game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .signify-research-box {
+    grid-template-columns: 1fr;
+
+    padding: 2rem;
+  }
+
+  .signify-research-icon {
+    width: 50px;
+
+    height: 50px;
+  }
+
+  .signify-footer {
+    padding: 6rem 0;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .signify-container {
+    width: calc(100% - 24px);
+  }
+
+  .signify-hero-actions {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .signify-direction-card {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+  }
+
+  .signify-direction-arrow {
+    transform: rotate(90deg);
+
+    justify-self: center;
+  }
+
+  .signify-reverse-visual {
+    gap: 0.75rem;
+  }
+
+  .signify-letter {
+    width: 80px;
+
+    height: 80px;
+
+    font-size: 3rem;
+  }
+
+  .signify-sign-box {
+    width: 100px;
+
+    height: 100px;
+  }
+
+  .signify-back {
+    font-size: 0.75rem;
+
+    padding: 0.6rem 0.85rem;
+  }
+}
