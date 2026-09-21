@@ -1,148 +1,122 @@
-# Syed Ibrahim Ali | Portfolio
+# Syed Ibrahim Ali — Portfolio
 
-A modern, responsive developer portfolio built with React and Vite to showcase my skills, projects, experience, and technical work.
+A modern, responsive personal portfolio built with React and Vite to showcase my projects, technical skills, experience, and contact information.
 
-🌐 **Live Website:** https://iiggrriiss.github.io/Portfolio/
+🌐 **Live Portfolio:**  
+https://iiggrriiss.github.io/Portfolio/
 
 ---
 
 ## About
 
-This portfolio is designed to present my work as a Full Stack Developer and AI & Machine Learning Engineer.
+I'm **Syed Ibrahim Ali**, a Full-Stack Developer and AI & Machine Learning Engineer.
 
-It includes:
-
-- Personal introduction and developer profile
-- Technical skills
-- Featured projects
-- Detailed project case studies
-- Blog section
-- Contact section
-- Light and dark themes
-- Interactive UI elements
-- Responsive design for desktop and mobile
-- Interactive 3D elements
+This portfolio highlights my work in full-stack development, frontend engineering, AI/ML projects, and interactive web experiences.
 
 ---
 
 ## Tech Stack
 
 ### Frontend
-
 - React.js
 - JavaScript (ES6+)
 - HTML5
 - CSS3
-- Vite
-- Tailwind CSS
 - Responsive Web Design
 
-### 3D & Visualization
+### Backend & APIs
+- Node.js
+- Express.js
+- REST APIs
 
-- Three.js
-- React Three Fiber
-- React Three Drei
+### Databases
+- PostgreSQL
+- SQL
 
-### Tools
-
+### Other Technologies & Tools
+- TypeScript
+- Next.js
 - Git
 - GitHub
-- VS Code
-- NPM
-- Figma
+- Vite
+- Three.js
+- React Three Fiber
+- Chart.js
 - Postman
-
-### Deployment
-
-- GitHub Pages
-- GitHub Actions
+- Figma
+- NPM
 
 ---
 
 ## Featured Projects
 
-### GRID-X
+### GRID-X — Global Race Intelligence Data eXchange
 
-**Global Race Intelligence Data eXchange**
+A full-stack telemetry and analytics platform focused on Formula 1 data, telemetry analysis, and predictive insights.
 
-A full-stack telemetry and analytics platform designed to process and visualize motorsport data.
-
-**Focus:**
-
-- Formula 1 telemetry
-- Data visualization
-- Analytics
-- Backend APIs
-- Predictive analysis
+**Highlights:**
+- Formula 1 telemetry visualization
+- Data analysis and analytics
+- Interactive dashboards
+- Predictive modelling
+- Full-stack architecture
 
 ---
 
-### Signify
+### Signify — Bidirectional Indian Sign Language System
 
-**Bidirectional Indian Sign Language Communication System**
+An Indian Sign Language communication system designed to enable interaction between hearing and non-hearing users.
 
-A project focused on improving communication between hearing and non-hearing users through Indian Sign Language.
-
-**Key features:**
-
-- Real-time hand gesture recognition
-- Indian Sign Language translation
-- Gesture-to-text communication
-- Text-to-speech functionality
-- Interactive learning mode
-- Sign language quiz and game modes
-- Multiplayer and leaderboard features
-
-**Technologies:**
-
-- Python
-- MediaPipe
-- Machine Learning
-- Streamlit
-- gTTS
-- Pygame
+**Highlights:**
+- Real-time sign recognition
+- Indian Sign Language support
+- MediaPipe hand tracking
+- Machine learning gesture classification
+- Speech generation
+- Interactive learning and quiz modes
+- Multiplayer word-based games
 
 ---
 
 ### Blog Website
 
-A full-stack blog platform built to demonstrate server-side development and web application architecture.
+A full-stack blogging platform built using Node.js and Express.js.
 
 **Technologies:**
-
 - Node.js
 - Express.js
 - EJS
-- JavaScript
-- REST APIs
+- RESTful architecture
 
 ---
 
 ## Portfolio Features
 
-### 🌓 Theme System
+- Responsive design
+- Light and dark themes
+- Interactive project case studies
+- 3D interactive elements
+- Smooth navigation
+- Project filtering and presentation
+- Skills showcase
+- Social links
+- Resume access
+- Functional contact form
+- Mobile-friendly layout
 
-Supports both light and dark themes with a custom theme toggle.
+---
 
-### 🎨 Responsive UI
+## Contact Form
 
-Designed to adapt across desktop, tablet, and mobile screen sizes.
+The portfolio includes a functional contact form powered by **Formspree**.
 
-### ⚡ Vite
+Visitors can submit:
 
-Uses Vite for fast development and optimized production builds.
+- Name
+- Email
+- Message
 
-### 🧊 Interactive 3D
-
-Includes interactive 3D elements built with Three.js and React Three Fiber.
-
-### 📚 Project Case Studies
-
-Projects have dedicated case-study sections covering their purpose, features, technologies, and implementation.
-
-### 📱 Responsive Navigation
-
-Navigation automatically adapts to different screen sizes while providing smooth section-based navigation.
+Messages are delivered directly to my email inbox without requiring a custom backend server for the portfolio.
 
 ---
 
@@ -154,27 +128,21 @@ Portfolio/
 │   ├── stormbreaker/
 │   ├── logo-dark.jpg
 │   ├── logo-light.png
-│   └── ...
+│   └── Ibrahim's_resume.pdf
 │
 ├── src/
-│   ├── assets/
 │   ├── components/
-│   │   ├── Skeleton/
-│   │   ├── Blog.jsx
-│   │   ├── BlogCard.jsx
-│   │   ├── BlogCaseStudy.jsx
-│   │   ├── Contact.jsx
-│   │   ├── GridX.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── ProjectCard.jsx
-│   │   └── Projects.jsx
+│   ├── pages/
+│   ├── assets/
+│   ├── App.jsx
+│   ├── main.jsx
 │   └── ...
 │
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml
 │
+├── index.html
 ├── package.json
 ├── vite.config.js
 └── README.md
