@@ -9,3 +9,9 @@ dist/
 .env
 .env.local
 .DS_Store
+
+# Add these lines to .gitignore if they're not there:
+#   .vite/
+#   node_modules/
+#   dist/
+
