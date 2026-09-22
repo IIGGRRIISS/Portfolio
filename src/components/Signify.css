@@ -3,7 +3,29 @@
    Dark: Purple + Gold
    Light: Purple + White
 ========================================================= */
+/* ==========================================================================
+   HERO BACKGROUND — Three.js canvas sits inside the hero only.
+   (Prepend this block; leave the rest of Signify.css below it untouched.)
+   ======================================================================== */
 
+.signify-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.signify-hero-background canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==========================================================================
+   ... everything below is your existing Signify.css, unchanged ...
+   ======================================================================== */
 .signify-page {
   --signify-purple: #8b5cf6;
   --signify-purple-bright: #a78bfa;

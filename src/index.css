@@ -63,6 +63,25 @@ body {
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 18px;
+  position: relative;
+}
+
+/* Canvas Background Container */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#canvas-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* Typography */

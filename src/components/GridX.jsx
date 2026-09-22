@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./GridX.css";
+import { createGridXBackground } from "../backgrounds/GridX.js";
 
 export default function GridX({ onBack }) {
+  const backgroundRef = useRef(null);
+
+  useEffect(() => {
+    if (!backgroundRef.current) return;
+
+    const background = createGridXBackground(backgroundRef.current);
+
+    return () => {
+      background?.dispose();
+    };
+  }, []);
+
   return (
     <main className="gridx-page">
       {/* HERO */}
       <section className="gridx-hero">
+        <div
+          ref={backgroundRef}
+          className="gridx-hero-background"
+          aria-hidden="true"
+        />
+
         <div className="gridx-container">
           <button className="gridx-back" onClick={onBack}>
             ← Back to Projects

@@ -1,6 +1,37 @@
+/* ==========================================================================
+   NEW — section shell + background layer
+   ======================================================================== */
+
 .projects {
+  position: relative;      /* establishes containing block for the bg */
+  overflow: hidden;        /* clips the canvas to the section bounds */
   background-color: var(--bg-primary);
 }
+
+.projects-background {
+  position: absolute;
+  inset: 0;                /* top/right/bottom/left = 0 — takes it out of flow */
+  z-index: 0;
+  pointer-events: none;    /* clicks pass through to the cards */
+}
+
+.projects-background canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* The .container holds the header, grid, and CTA — lift it above the bg. */
+.projects > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   EVERYTHING BELOW IS YOUR EXISTING Projects.css — unchanged
+   ======================================================================== */
 
 .section-header {
   text-align: center;
@@ -52,12 +83,13 @@
   gap: var(--spacing-md);
   padding: var(--spacing-2xl);
   background-color: var(--bg-secondary);
-  border-radius: 16px;  /* ← changed from 8px */
+  border-radius: 16px;
   border: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);  /* ← added */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   animation: fadeInUp 0.6s ease-out 0.3s backwards;
 }
+
 .projects-cta p {
   color: var(--text-muted);
   margin: 0;

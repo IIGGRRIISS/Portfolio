@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./BlogCaseStudy.css";
+import { createBlogCaseStudyBackground } from "../backgrounds/BlogCaseStudy.js";
 
 export default function BlogCaseStudy() {
+  const backgroundRef = useRef(null);
+
+  useEffect(() => {
+    if (!backgroundRef.current) return;
+
+    const background = createBlogCaseStudyBackground(backgroundRef.current);
+
+    return () => {
+      background?.dispose();
+    };
+  }, []);
+
   const backToProjects = () => {
     window.location.href = "/#projects";
   };
@@ -14,6 +27,12 @@ export default function BlogCaseStudy() {
       ========================= */}
 
       <section className="blogcase-hero">
+        <div
+          ref={backgroundRef}
+          className="blogcase-hero-background"
+          aria-hidden="true"
+        />
+
         <div className="blogcase-container">
 
           <a

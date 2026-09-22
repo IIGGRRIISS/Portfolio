@@ -182,3 +182,33 @@
     padding: var(--spacing-md);
   }
 }
+
+/* The section becomes the positioning context. */
+.skills-section {
+  position: relative;
+  overflow: hidden;      /* keeps the canvas from spilling out */
+}
+
+/* The background wrapper is pulled out of the document flow entirely. */
+.skills-techno-background {
+  position: absolute;
+  inset: 0;              /* top/right/bottom/left = 0 */
+  z-index: 0;
+  pointer-events: none;  /* clicks fall through to the content */
+}
+
+/* Make sure the canvas itself is also absolute in case the JS-set
+   width/height ever gets overridden. */
+.skills-techno-background canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Lift the content above the background. */
+.skills-content {
+  position: relative;
+  z-index: 1;
+}

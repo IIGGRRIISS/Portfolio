@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import GridX from "./components/GridX";
 import Signify from "./components/Signify";
@@ -53,6 +52,59 @@ export default function App() {
   }, []);
 
   /*
+   * Automatically mark Projects as active
+   * while viewing a project case study.
+   */
+  useEffect(() => {
+    if (projectSlug) {
+      setActiveSection("projects");
+    }
+  }, [projectSlug]);
+
+  /*
+   * Automatically detect which main section
+   * is currently visible on the homepage.
+   */
+  useEffect(() => {
+    if (projectSlug) {
+      return;
+    }
+
+    const sections = ["home", "skills", "projects", "contact"]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!sections.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) =>
+              b.intersectionRatio - a.intersectionRatio
+          );
+
+        if (visibleSections.length > 0) {
+          setActiveSection(visibleSections[0].target.id);
+        }
+      },
+      {
+        threshold: [0.15, 0.3, 0.5, 0.7],
+        rootMargin: "-15% 0px -55% 0px",
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [projectSlug]);
+
+  /*
    * Apply and persist theme.
    */
   useEffect(() => {
@@ -81,6 +133,7 @@ export default function App() {
     );
 
     setProjectSlug(slug);
+    setActiveSection("projects");
 
     window.scrollTo({
       top: 0,
@@ -110,6 +163,7 @@ export default function App() {
 
     element?.scrollIntoView({
       behavior: "smooth",
+      block: "start",
     });
   };
 
@@ -150,14 +204,8 @@ export default function App() {
       />
 
       {selectedProject ? (
-        /*
-         * Dedicated project case-study page
-         */
         renderProjectCaseStudy()
       ) : (
-        /*
-         * Main portfolio
-         */
         <>
           <main className="main-content">
             <section id="home">
@@ -170,10 +218,6 @@ export default function App() {
 
             <section id="projects">
               <Projects onOpenCaseStudy={openCaseStudy} />
-            </section>
-
-            <section id="blog">
-              <Blog onOpenCaseStudy={openCaseStudy} />
             </section>
 
             <section id="contact">

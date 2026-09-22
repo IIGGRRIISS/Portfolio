@@ -1,3 +1,30 @@
+/* ==========================================================================
+   HERO BACKGROUND — Three.js canvas sits inside the hero only.
+   (Prepend this block; leave the rest of GridX.css below it untouched.)
+   ======================================================================== */
+
+.gridx-hero {
+  overflow: hidden;   /* clip the canvas to the hero's bounds */
+}
+
+.gridx-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gridx-hero-background canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==========================================================================
+   ... everything below is your existing GridX.css, unchanged ...
+   ======================================================================== */
 .gridx-page {
   --gridx-red: #ff2b2b;
   --gridx-red-bright: #ff3b3b;
@@ -1445,4 +1472,29 @@ html[data-theme="light"] .gridx-page {
 
     flex-direction: column;
   }
+}
+
+
+.gridx-page {
+  position: relative;
+}
+
+.gridx-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gridx-background canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.gridx-page > section {
+  position: relative;
+  z-index: 1;
 }

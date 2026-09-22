@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Signify.css";
+import { createSignifyBackground } from "../backgrounds/Signify.js";
 
 export default function Signify() {
+  const backgroundRef = useRef(null);
+
+  useEffect(() => {
+    if (!backgroundRef.current) return;
+
+    const background = createSignifyBackground(backgroundRef.current);
+
+    return () => {
+      background?.dispose();
+    };
+  }, []);
+
   const backToProjects = () => {
     window.location.href = "/#projects";
   };
@@ -10,6 +23,12 @@ export default function Signify() {
     <main className="signify-page">
       {/* HERO */}
       <section className="signify-hero">
+        <div
+          ref={backgroundRef}
+          className="signify-hero-background"
+          aria-hidden="true"
+        />
+
         <div className="signify-container">
           <button
             className="signify-back"

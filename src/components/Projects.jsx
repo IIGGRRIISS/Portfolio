@@ -1,17 +1,35 @@
-
-
-import React from 'react';
-import { useFetch } from '../hooks/useFetch';
-import { projects } from '../data/projects';
-import ProjectCard from './ProjectCard';
-import ProjectSkeleton from './Skeleton/ProjectSkeleton';
-import './Projects.css';
+import React, { useEffect, useRef } from "react";
+import { useFetch } from "../hooks/useFetch";
+import { projects } from "../data/projects";
+import ProjectCard from "./ProjectCard";
+import ProjectSkeleton from "./Skeleton/ProjectSkeleton";
+import { createTechnoBackground } from "../backgrounds/techno.js";
+import "./Projects.css";
 
 export default function Projects({ onOpenCaseStudy }) {
   const { loading, items } = useFetch(projects, 1000);
+  const backgroundRef = useRef(null);
+
+  useEffect(() => {
+    if (!backgroundRef.current) return;
+
+    const background = createTechnoBackground(backgroundRef.current, {
+      parallax: 0.6,
+    });
+
+    return () => {
+      background?.dispose();
+    };
+  }, []);
 
   return (
     <div className="projects">
+      <div
+        ref={backgroundRef}
+        className="projects-background"
+        aria-hidden="true"
+      />
+
       <div className="container">
         <div className="section-header">
           <h2>Featured Projects</h2>
@@ -27,25 +45,30 @@ export default function Projects({ onOpenCaseStudy }) {
               <ProjectSkeleton />
             </>
           ) : (
-            items?.filter((project) => project.published !== false).map((project, idx) => (
-              <div 
-                key={project.id}
-                className="project-item"
-                style={{
-                  animation: `fadeInUp 0.6s ease-out ${idx * 0.1}s backwards`
-                }}
-              >
-              <ProjectCard project={project} onOpenCaseStudy={onOpenCaseStudy} />
-              </div>
-            ))
+            items
+              ?.filter((project) => project.published !== false)
+              .map((project, idx) => (
+                <div
+                  key={project.id}
+                  className="project-item"
+                  style={{
+                    animation: `fadeInUp 0.6s ease-out ${idx * 0.1}s backwards`,
+                  }}
+                >
+                  <ProjectCard
+                    project={project}
+                    onOpenCaseStudy={onOpenCaseStudy}
+                  />
+                </div>
+              ))
           )}
         </div>
 
         <div className="projects-cta">
           <p>Want to see more? Check out my GitHub.</p>
-          <a 
-            href="https://github.com/IIGGRRIISS" 
-            target="_blank" 
+          <a
+            href="https://github.com/IIGGRRIISS"
+            target="_blank"
             rel="noopener noreferrer"
             className="btn btn-outline"
           >

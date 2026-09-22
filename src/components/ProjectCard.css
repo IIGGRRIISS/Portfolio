@@ -246,7 +246,7 @@
    CASE STUDY BUTTON — DARK
 ========================= */
 
-.project-link.demo {
+.project-link.case-study {
   background-color: var(--color-red);
 
   color: var(--color-white);
@@ -256,7 +256,7 @@
   box-shadow: 0 4px 12px rgba(255, 42, 42, 0.12);
 }
 
-.project-link.demo:hover {
+.project-link.case-study:hover {
   background-color: transparent;
 
   color: var(--color-red);
@@ -266,22 +266,6 @@
   transform: translateY(-2px);
 
   box-shadow: 0 6px 18px rgba(255, 42, 42, 0.22);
-}
-
-/* =========================
-   CASE STUDY ARROW
-========================= */
-
-.project-link.demo::after {
-  content: "→";
-
-  margin-left: 0.45rem;
-
-  transition: transform var(--transition-fast);
-}
-
-.project-link.demo:hover::after {
-  transform: translateX(4px);
 }
 
 /* =========================
@@ -384,7 +368,7 @@ html[data-theme="light"] .project-link.github:hover {
 
 /* Case Study */
 
-html[data-theme="light"] .project-link.demo {
+html[data-theme="light"] .project-link.case-study {
   background-color: var(--accent-color);
 
   border-color: var(--accent-color);
@@ -394,7 +378,7 @@ html[data-theme="light"] .project-link.demo {
   box-shadow: 0 4px 12px rgba(122, 62, 62, 0.1);
 }
 
-html[data-theme="light"] .project-link.demo:hover {
+html[data-theme="light"] .project-link.case-study:hover {
   background-color: transparent;
 
   color: var(--accent-color);
@@ -404,14 +388,6 @@ html[data-theme="light"] .project-link.demo:hover {
   transform: translateY(-2px);
 
   box-shadow: 0 6px 18px rgba(122, 62, 62, 0.18);
-}
-
-/* =========================
-   LIGHT MODE — CASE STUDY ARROW
-========================= */
-
-html[data-theme="light"] .project-link.demo::after {
-  color: inherit;
 }
 
 /* =========================
