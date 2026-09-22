@@ -1,3 +1,9 @@
+
+# Vite build cache — regenerated on every run, never commit
+.vite/
+node_modules/
+dist/
+
 node_modules/
 dist/
 .env
