@@ -299,85 +299,93 @@ export const projects = [
 
   {
     id: 4,
-    slug: "blog-app",
+    slug: "marketplace",
 
-    title: "Blog App",
+    title: "Marketplace",
 
-    tagline: "Dynamic Server-Side Rendered Blog Platform",
+    tagline: "Full-Stack Multi-Vendor E-Commerce Platform",
 
     description:
-      "A dynamic blog website built with Node.js, Express.js, and EJS. The application provides complete blog post management through create, read, update, and delete operations with server-side rendering.",
+      "A full-stack e-commerce marketplace where users can buy and sell products. Built as a monorepo with a Next.js frontend and an Express + Prisma backend, featuring JWT authentication, a seller dashboard, and a shopping cart.",
 
     shortDesc:
-      "Node.js and Express blog platform with CRUD operations and EJS server-side rendering.",
+      "Monorepo e-commerce platform with Next.js, Express, Prisma, and PostgreSQL featuring buyer/seller roles and atomic checkout.",
 
-    image: "/projects/blog.jpg",
+    image: "/projects/marketplace.jpg",
 
     tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
       "Node.js",
       "Express.js",
-      "EJS",
-      "HTML",
-      "CSS",
-      "JavaScript"
+      "Prisma",
+      "PostgreSQL",
+      "JWT",
+      "Zod",
+      "Vercel",
+      "Render"
     ],
 
     role: "Full-Stack Developer",
 
     problem:
-      "A blog platform needs a straightforward content workflow that allows users to create, publish, view, edit, and delete posts without unnecessary complexity.",
+      "Building a multi-vendor marketplace requires managing complex relationships between users, products, carts, and orders. The challenge was to create a secure, scalable platform where sellers can manage their storefronts and buyers can seamlessly browse and purchase items.",
 
     approach:
-      "I built the application using Node.js and Express.js for the backend and EJS for server-side rendering. The project focuses on understanding routing, server-side templates, CRUD operations, and the fundamentals of building a dynamic web application.",
+      "I built a monorepo structure separating the Next.js frontend from the Express backend. I used Prisma ORM with a Neon PostgreSQL database for type-safe database interactions. The backend relies on JWT for stateless authentication and Zod for schema validation, while the frontend uses Tailwind CSS for a responsive, dark-mode-ready UI.",
 
     highlights: [
-      "Implemented complete CRUD operations for blog posts.",
-      "Built individual pages for viewing blog posts.",
-      "Added editing functionality for existing posts.",
-      "Implemented deletion of blog posts.",
-      "Used EJS for server-side rendering and dynamic content.",
-      "Created responsive styling for the blog interface."
+      "Architected a monorepo structure separating the Next.js frontend and Express backend.",
+      "Implemented JWT-based authentication with distinct Buyer and Seller roles.",
+      "Developed a Seller Dashboard allowing users to list, edit, and manage products.",
+      "Created a fully functional shopping cart and atomic checkout transaction flow.",
+      "Integrated Prisma ORM with a serverless Neon PostgreSQL database.",
+      "Used Zod for robust backend data validation.",
+      "Deployed the frontend on Vercel and the backend on Render."
     ],
 
     features: [
-      "Create Blog Posts",
-      "Publish Blog Posts",
-      "View Individual Posts",
-      "Edit Existing Posts",
-      "Delete Posts",
-      "Server-Side Rendering",
-      "Responsive Styling"
+      "JWT Authentication",
+      "Buyer / Seller Roles",
+      "Seller Dashboard",
+      "Product Catalog",
+      "Shopping Cart",
+      "Checkout & Orders",
+      "Responsive UI",
+      "Dark-mode Ready"
     ],
 
     results: [
       {
-        value: "CRUD",
-        label: "Complete blog management"
+        value: "Monorepo",
+        label: "Next.js & Express"
       },
       {
-        value: "EJS",
-        label: "Server-side rendering"
+        value: "JWT",
+        label: "Role-Based Auth"
       },
       {
-        value: "Express",
-        label: "Backend framework"
+        value: "Prisma",
+        label: "Type-Safe ORM"
       },
       {
-        value: "Node.js",
-        label: "Runtime environment"
+        value: "Live",
+        label: "Deployed on Vercel & Render"
       }
     ],
 
     architecture: [
-      "Node.js provides the runtime environment for the application.",
-      "Express.js handles routing and server-side application logic.",
-      "EJS renders dynamic pages on the server.",
-      "HTML and CSS provide the structure and styling of the interface.",
-      "JavaScript handles client-side interactions."
+      "Frontend: Next.js (App Router), React, Tailwind CSS, TypeScript.",
+      "Backend: Node.js, Express, Prisma ORM, Zod validation.",
+      "Database: PostgreSQL hosted on Neon (Serverless).",
+      "Authentication: JWT-based with Buyer and Seller role separation.",
+      "Deployment: Vercel (Frontend), Render (Backend)."
     ],
 
     caseStudy:
-      "This project was created as part of my full-stack web development learning journey. It focused on understanding how a dynamic server-rendered application works, including Express routing, EJS templates, CRUD operations, and the relationship between frontend pages and backend logic.",
+      "The Marketplace project was built to master full-stack TypeScript development and modern deployment workflows. By leveraging a monorepo and serverless PostgreSQL, the application remains highly scalable while keeping the developer experience seamless across the frontend and backend.",
 
     collaborators: [
       {
@@ -388,8 +396,8 @@ export const projects = [
       }
     ],
 
-    github:
-      "https://github.com/IIGGRRIISS/Blog",
+    liveDemo: "https://marketplace-web-nu-murex.vercel.app",
+    github: "https://github.com/IIGGRRIISS/marketplace",
 
     color: "#ff2a2a"
   }

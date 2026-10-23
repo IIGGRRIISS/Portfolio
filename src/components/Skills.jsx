@@ -4,52 +4,68 @@ import "./Skills.css";
 import { createTechnoBackground } from "../backgrounds/techno.js";
 
 const skillsData = {
-  frontend: {
-    title: "Frontend",
+  languages: {
+    title: "Languages",
     skills: [
-      "React.js",
-      "Next.js",
-      "JavaScript",
+      "Python",
+      "JavaScript (ES6+)",
       "TypeScript",
-      "HTML/CSS",
-      "Responsive Design",
-      "UI Development",
+    ],
+  },
+
+  ai_ml: {
+    title: "AI / ML & Data",
+    skills: [
+      "PyTorch",
+      "Scikit-learn",
+      "XGBoost",
+      "Hugging Face Transformers",
+      "Sentence Transformers",
+      "MediaPipe",
+      "SHAP",
+      "Pandas",
+      "NumPy",
     ],
   },
 
   backend: {
-    title: "Backend",
+    title: "Backend & Databases",
     skills: [
+      "FastAPI",
+      "Flask",
       "Node.js",
       "Express.js",
       "REST APIs",
-      "Full Stack",
-      "Server Architecture",
-      "Authentication",
+      "PostgreSQL",
+      "SQL",
+      "Prisma",
+    ],
+  },
+
+  frontend: {
+    title: "Frontend",
+    skills: [
+      "React",
+      "Next.js",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Chart.js",
+      "Three.js",
     ],
   },
 
   tools: {
-    title: "Tools & Libraries",
+    title: "Tools & Infrastructure",
     skills: [
+      "Git",
       "GitHub",
-      "Three.js",
-      "Data Visualization",
-      "Postman API",
-      "Responsive Design",
-      "Web Development",
-    ],
-  },
-
-  databases: {
-    title: "Databases",
-    skills: [
-      "PostgreSQL",
-      "SQL",
-      "MongoDB",
-      "Data Analysis",
-      "Schema Design",
-      "Query Optimization",
+      "Jupyter",
+      "Hugging Face Hub",
+      "Postman",
+      "Vercel",
+      "Render",
+      "Docker",
     ],
   },
 };

@@ -8,8 +8,8 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import GridX from "./components/GridX";
+import Marketplace from "./components/Marketplace";
 import Signify from "./components/Signify";
-import BlogCaseStudy from "./components/BlogCaseStudy";
 import { projects } from "./data/projects";
 import ScrollToTop from "./components/Scrolltotop";
 
@@ -182,8 +182,8 @@ export default function App() {
       case "signify":
         return <Signify onBack={closeCaseStudy} />;
 
-      case "blog-app":
-        return <BlogCaseStudy onBack={closeCaseStudy} />;
+      case "marketplace":
+        return <Marketplace onBack={closeCaseStudy} />;
 
       default:
         return null;
