@@ -228,7 +228,7 @@ export default function App() {
           <footer className="footer">
             <div className="container">
               <p>
-                &copy; 2026 IGRIS. React 💙❤️
+                &copy; 2026 Syed Ibrahim Ali. React 💙❤️
               </p>
             </div>
           </footer>
