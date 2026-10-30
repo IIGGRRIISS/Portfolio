@@ -33,16 +33,27 @@
   --transition-slow: 0.5s ease-in-out;
 }
 
-/* Light Mode */
+/* Light Mode - MIDNIGHT BLUE & CREAM */
 :root[data-theme='light'] {
-  --bg-primary: #f5f3f0;
-  --bg-secondary: #ffffff;
-  --text-primary: #2d2520;
-  --text-muted: #6b6158;
-  --accent-color: #d4522e;
-  --border-color: #e8ddd6;
-  --card-bg: #fffcf9;
-  --hover-color: #f0e8e0;
+  --bg-primary: #F7F4E9;       /* Soft Cream/Beige Background */
+  --bg-secondary: #ffffff;     /* Pure White for cards */
+  
+  --text-primary: #0F3C65;     /* Midnight Blue for text */
+  --text-muted: #5c7995;       /* Muted slate-blue */
+  
+  --accent-color: #0F3C65;     /* Midnight Blue Accent */
+  --border-color: #d2cebb;     /* Warm beige border */
+  
+  --card-bg: #ffffff;
+  --hover-color: #ebe7d6;
+  
+  /* Keeping these to map to old variable names */
+  --color-black: #0F3C65;
+  --color-white: #ffffff;
+  --color-red: #0F3C65;        /* Maps old red to Midnight Blue */
+  --color-dark-gray: #F7F4E9;
+  --color-gray: #ffffff;
+  --color-light-gray: #d2cebb;
 }
 
 * {
@@ -136,7 +147,7 @@ a:hover {
   gap: var(--spacing-sm);
   padding: 0.875rem 1.75rem;
   background-color: var(--accent-color);
-  color: var(--bg-primary);
+  color: #ffffff;
   border: 2px solid var(--accent-color);
   border-radius: 4px;
   font-family: var(--font-secondary);
@@ -151,7 +162,7 @@ a:hover {
   background-color: transparent;
   color: var(--accent-color);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(15, 60, 101, 0.2);
 }
 
 .btn-outline {
@@ -162,7 +173,7 @@ a:hover {
 
 .btn-outline:hover {
   background-color: var(--accent-color);
-  color: var(--bg-primary);
+  color: #ffffff;
 }
 
 /* Animations */
@@ -178,69 +189,24 @@ a:hover {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(255, 42, 42, 0.5);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 42, 42, 0.8);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.slide-in-left {
-  animation: slideInLeft 0.6s ease-out forwards;
-}
-
-.slide-in-right {
-  animation: slideInRight 0.6s ease-out forwards;
-}
+.fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+.fade-in { animation: fadeIn 0.6s ease-out forwards; }
+.slide-in-left { animation: slideInLeft 0.6s ease-out forwards; }
+.slide-in-right { animation: slideInRight 0.6s ease-out forwards; }
 
 /* Utility */
 .container {
@@ -263,30 +229,13 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.8rem;
-  }
-
-  h2 {
-    font-size: 1.95rem;
-  }
-
-  .container {
-    padding: 0 var(--spacing-md);
-  }
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 1.95rem; }
+  .container { padding: 0 var(--spacing-md); }
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  .btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.9rem;
-  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+  .btn { padding: 0.75rem 1.25rem; font-size: 0.9rem; }
 }
